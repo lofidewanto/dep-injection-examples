@@ -18,7 +18,6 @@
  */
 package de.di;
 
-
 /**
  * Mock for UdmService.
  * 
