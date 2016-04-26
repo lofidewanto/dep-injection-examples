@@ -11,4 +11,4 @@ Examples and Introduction for Dependency Injection and Inversion of Control:
 - CDI / JBoss Weld
 - Spring Framework
 
-Our current build status at BuildHive CloudBees: [![Build Status](https://buildhive.cloudbees.com/job/lofidewanto/job/dep-injection-examples/badge/icon)](https://buildhive.cloudbees.com/job/lofidewanto/job/dep-injection-examples/)
+Our current build status: [![Build Status](https://travis-ci.org/lofidewanto/dep-injection-examples.svg?branch=master)](https://travis-ci.org/lofidewanto/dep-injection-examples)
