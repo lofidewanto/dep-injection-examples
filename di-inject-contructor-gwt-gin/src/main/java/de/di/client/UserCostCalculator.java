@@ -18,6 +18,9 @@
 */
 package de.di.client;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class UserCostCalculator {
 
     public int calculateUserCost(String username) {

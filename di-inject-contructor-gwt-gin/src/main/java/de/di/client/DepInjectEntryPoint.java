@@ -34,8 +34,17 @@ public class DepInjectEntryPoint implements EntryPoint {
 
     @Override
     public void onModuleLoad() {
+        createSolutionService();
+
+        createSolutionService();
+
+        createSolutionService();
+    }
+
+    private void createSolutionService() {
         SolutionService solutionService = injector.getSolutionService();
         logger.info("Users: " + solutionService.getSolutionUsers());
+        logger.info("Solution Service object: " + solutionService.toString());
     }
 
 }
