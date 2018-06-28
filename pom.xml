@@ -34,6 +34,6 @@
 		<module>di-inject-constructor</module>
 		<module>di-inject-constructor-guice</module>
 		<module>di-inject-field-spring</module>
-        <module>di-inject-contructor-gwt-gin</module>
+		<module>di-inject-constructor-gwt-gin</module>
 	</modules>
 </project>
