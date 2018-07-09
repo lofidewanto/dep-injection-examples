@@ -18,44 +18,16 @@
  */
 package de.di;
 
-import javax.inject.Named;
+public class Storage<T> {
 
-import org.springframework.beans.factory.annotation.Autowired;
+	private T name;
 
-/**
- * Service implementation.
- * 
- * @author Lofi Dewanto
- * @since 1.0.0
- * @version 1.0.0
- */
-@Named
-public class UdmServiceImpl implements UdmService {
-
-	@Autowired
-	private Storage<String> storageString;
-
-	@Autowired
-	private Storage<Integer> storageInteger;
-
-	@Override
-	public String findUdmUserById(Long id) {
-		// Getting the storage
-		System.out.println("Storage String name: " + storageString.getName());
-		System.out.println("Storage Integer name: " + storageInteger.getName());
-
-		// Connect to database
-		databaseConnect();
-
-		if (id == 1L) {
-			return "UDM";
-		} else {
-			return "unknown";
-		}
+	public T getName() {
+		return name;
 	}
 
-	private void databaseConnect() {
-		System.out.println("\nConnecting to database...");
+	public void setName(T name) {
+		this.name = name;
 	}
 
 }

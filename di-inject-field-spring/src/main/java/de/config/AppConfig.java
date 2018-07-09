@@ -18,8 +18,11 @@
  */
 package de.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
+import de.di.Storage;
 
 /**
  * Spring Java Config.
@@ -31,5 +34,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(basePackages = { "de.di" })
 public class AppConfig {
+
+	@Bean
+	public Storage<String> storageString() {
+		Storage<String> storage = new Storage<String>();
+		storage.setName("Lofi Storage String");
+
+		return storage;
+	}
+
+	@Bean
+	public Storage<Integer> storageInteger() {
+		Storage<Integer> storage = new Storage<Integer>();
+		storage.setName(1);
+
+		return storage;
+	}
 
 }
