@@ -22,6 +22,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import de.di.Storage;
 import de.di.UdmService;
 import de.di.UdmServiceMock;
 
@@ -39,5 +40,21 @@ public class AppMockConfig {
 	@Bean
 	public UdmService udmService() {
 		return new UdmServiceMock();
+	}
+
+	@Bean
+	public Storage<String> storageString() {
+		Storage<String> storage = new Storage<String>();
+		storage.setName("Lofi Storage String Mock");
+
+		return storage;
+	}
+
+	@Bean
+	public Storage<Integer> storageInteger() {
+		Storage<Integer> storage = new Storage<Integer>();
+		storage.setName(1);
+
+		return storage;
 	}
 }
