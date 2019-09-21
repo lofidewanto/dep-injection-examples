@@ -18,33 +18,31 @@
  */
 package de.di.client;
 
+import java.util.logging.Logger;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 
-import java.util.logging.Logger;
-
 public class DepInjectEntryPoint implements EntryPoint {
 
-    private static Logger logger = Logger
-            .getLogger(DepInjectEntryPoint.class.getName());
+	private static final Logger logger = Logger.getLogger(DepInjectEntryPoint.class.getName());
 
-    // Create Gin Injector
-    private final DepInjectGinjector injector = GWT
-            .create(DepInjectGinjector.class);
+	// Create Gin Injector
+	private final DepInjectGinjector injector = GWT.create(DepInjectGinjector.class);
 
-    @Override
-    public void onModuleLoad() {
-        createSolutionService();
+	@Override
+	public void onModuleLoad() {
+		createSolutionService();
 
-        createSolutionService();
+		createSolutionService();
 
-        createSolutionService();
-    }
+		createSolutionService();
+	}
 
-    private void createSolutionService() {
-        SolutionService solutionService = injector.getSolutionService();
-        logger.info("Users: " + solutionService.getSolutionUsers());
-        logger.info("Solution Service object: " + solutionService.toString());
-    }
+	private void createSolutionService() {
+		SolutionService solutionService = injector.getSolutionService();
+		logger.info("Users: " + solutionService.getSolutionUsers());
+		logger.info("Solution Service object: " + solutionService.toString());
+	}
 
 }

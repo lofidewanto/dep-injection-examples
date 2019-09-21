@@ -29,24 +29,22 @@ import java.util.logging.Logger;
  */
 public class UdmServiceImpl implements UdmService {
 
-    private static Logger logger = Logger
-            .getLogger(UdmServiceImpl.class.getName());
+	private static final Logger logger = Logger.getLogger(UdmServiceImpl.class.getName());
 
+	@Override
+	public String findUdmUserById(Long id) {
+		// Connect to database
+		databaseConnect();
 
-    @Override
-    public String findUdmUserById(Long id) {
-        // Connect to database
-        databaseConnect();
+		if (id == 1L) {
+			return "Lofi";
+		} else {
+			return "unknown";
+		}
+	}
 
-        if (id == 1L) {
-            return "Lofi";
-        } else {
-            return "unknown";
-        }
-    }
-
-    private void databaseConnect() {
-        logger.info("\nConnecting to database...");
-    }
+	private void databaseConnect() {
+		logger.info("Connecting to database...");
+	}
 
 }

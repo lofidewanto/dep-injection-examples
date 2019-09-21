@@ -18,10 +18,11 @@
  */
 package de.di.client;
 
-import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
+
+import javax.inject.Inject;
 
 /**
  * Service implementation.
@@ -32,39 +33,38 @@ import java.util.logging.Logger;
  */
 public class SolutionServiceImpl implements SolutionService {
 
-    private static Logger logger = Logger
-            .getLogger(SolutionServiceImpl.class.getName());
+	private static final Logger logger = Logger.getLogger(SolutionServiceImpl.class.getName());
 
-    private final UdmService udmService;
+	private final UdmService udmService;
 
-    private final UserCostCalculator userCostCalculator;
+	private final UserCostCalculator userCostCalculator;
 
-    /**
-     * Constructor injection.
-     *
-     * @param udmService
-     */
-    @Inject
-    public SolutionServiceImpl(UdmService udmService, UserCostCalculator userCostCalculator) {
-        super();
-        this.udmService = udmService;
-        this.userCostCalculator = userCostCalculator;
-    }
+	/**
+	 * Constructor injection.
+	 *
+	 * @param udmService
+	 */
+	@Inject
+	public SolutionServiceImpl(UdmService udmService, UserCostCalculator userCostCalculator) {
+		super();
+		this.udmService = udmService;
+		this.userCostCalculator = userCostCalculator;
+	}
 
-    @Override
-    public Set<String> getSolutionUsers() {
-        logger.info("\nUsing UDM");
-        String user = udmService.findUdmUserById(1L);
+	@Override
+	public Set<String> getSolutionUsers() {
+		logger.info("Using UDM");
+		String user = udmService.findUdmUserById(1L);
 
-        Set<String> result = new HashSet<String>();
-        result.add("User Name: " + user);
+		Set<String> result = new HashSet<String>();
+		result.add("User Name: " + user);
 
-        // Calculate
-        int cost = userCostCalculator.calculateUserCost(user);
+		// Calculate
+		int cost = userCostCalculator.calculateUserCost(user);
 
-        logger.info("User " + user + " - Cost: " + cost);
+		logger.info("User " + user + " - Cost: " + cost);
 
-        return result;
-    }
+		return result;
+	}
 
 }

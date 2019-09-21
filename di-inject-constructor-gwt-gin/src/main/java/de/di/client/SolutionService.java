@@ -11,5 +11,7 @@ package de.di.client;
 import java.util.Set;
 
 public interface SolutionService {
-    Set<String> getSolutionUsers();
+
+	Set<String> getSolutionUsers();
+
 }

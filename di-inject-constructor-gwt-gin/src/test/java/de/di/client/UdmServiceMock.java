@@ -18,6 +18,8 @@
  */
 package de.di.client;
 
+import java.util.logging.Logger;
+
 /**
  * Mock for UdmService.
  *
@@ -27,11 +29,13 @@ package de.di.client;
  */
 public class UdmServiceMock implements UdmService {
 
-    @Override
-    public String findUdmUserById(Long id) {
-        // No database connection
-        System.out.println("\nNo database...");
-        return "UDM Mock";
-    }
+	private static final Logger logger = Logger.getLogger(UdmServiceMock.class.getName());
+
+	@Override
+	public String findUdmUserById(Long id) {
+		// No database connection
+		logger.info("No database...");
+		return "UDM Mock";
+	}
 
 }

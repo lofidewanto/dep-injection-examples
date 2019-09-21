@@ -32,9 +32,7 @@
     <packaging>jar</packaging>
     <name>di-inject-constructor-gwt-gin</name>
     <version>1.0.0-SNAPSHOT</version>
-    <description>
-        Dep Inject with GWT Gin
-    </description>
+    <description>Dep Inject with GWT Gin</description>
 
     <dependencies>
         <!-- GWT Starters -->
@@ -60,9 +58,7 @@
                 <groupId>net.ltgt.gwt.maven</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
-                    <moduleName>
-                        de.di.Gin
-                    </moduleName>
+                    <moduleName>de.di.Gin</moduleName>
                     <startupUrls>
                         <url>/gin/</url>
                     </startupUrls>

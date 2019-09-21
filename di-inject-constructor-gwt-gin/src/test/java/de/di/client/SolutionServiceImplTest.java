@@ -18,10 +18,11 @@
  */
 package de.di.client;
 
+import java.util.Set;
+import java.util.logging.Logger;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Set;
 
 /**
  * Test.
@@ -32,30 +33,32 @@ import java.util.Set;
  */
 public class SolutionServiceImplTest {
 
-    private UserCostCalculator calculator = new UserCostCalculator();
+	private static final Logger logger = Logger.getLogger(SolutionServiceImplTest.class.getName());
 
-    @Before
-    public void setUp() throws Exception {
-    }
+	private UserCostCalculator calculator = new UserCostCalculator();
 
-    @Test
-    public void testGetSolutionUsers() {
-        // Constructor injection
-        UdmService udmService = new UdmServiceImpl();
-        SolutionService solutionService = new SolutionServiceImpl(udmService, calculator);
+	@Before
+	public void setUp() throws Exception {
+	}
 
-        Set<String> solutionUsers = solutionService.getSolutionUsers();
-        System.out.println(solutionUsers);
-    }
+	@Test
+	public void testGetSolutionUsers() {
+		// Constructor injection
+		UdmService udmService = new UdmServiceImpl();
+		SolutionService solutionService = new SolutionServiceImpl(udmService, calculator);
 
-    @Test
-    public void testGetSolutionUsersWithMock() {
-        // Using UDM Mock
-        UdmService udmServiceMock = new UdmServiceMock();
-        // Constructor injection
-        SolutionService solutionService = new SolutionServiceImpl(udmServiceMock, calculator);
+		Set<String> solutionUsers = solutionService.getSolutionUsers();
+		logger.info(solutionUsers.toString());
+	}
 
-        Set<String> solutionUsers = solutionService.getSolutionUsers();
-        System.out.println(solutionUsers);
-    }
+	@Test
+	public void testGetSolutionUsersWithMock() {
+		// Using UDM Mock
+		UdmService udmServiceMock = new UdmServiceMock();
+		// Constructor injection
+		SolutionService solutionService = new SolutionServiceImpl(udmServiceMock, calculator);
+
+		Set<String> solutionUsers = solutionService.getSolutionUsers();
+		logger.info(solutionUsers.toString());
+	}
 }
