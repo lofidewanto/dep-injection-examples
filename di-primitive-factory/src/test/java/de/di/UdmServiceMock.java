@@ -29,8 +29,8 @@ import org.slf4j.LoggerFactory;
  * @version 1.0.0
  */
 public class UdmServiceMock implements UdmService {
-	
-	private static Logger logger = LoggerFactory.getLogger(UdmServiceMock.class);
+
+	private static final Logger logger = LoggerFactory.getLogger(UdmServiceMock.class);
 
 	@Override
 	public String findUdmUserById(Long id) {

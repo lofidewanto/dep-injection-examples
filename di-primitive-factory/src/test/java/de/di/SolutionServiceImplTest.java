@@ -33,8 +33,8 @@ import org.slf4j.LoggerFactory;
  * @version 1.0.0
  */
 public class SolutionServiceImplTest {
-	
-	private static Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
+
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
 
 	@BeforeEach
 	public void setUp() throws Exception {

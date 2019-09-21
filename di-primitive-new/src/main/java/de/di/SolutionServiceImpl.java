@@ -32,8 +32,8 @@ import org.slf4j.LoggerFactory;
  * @version 1.0.0
  */
 public class SolutionServiceImpl implements SolutionService {
-	
-	private static Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
+
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
 
 	@Override
 	public Set<String> getSolutionUsers() {
