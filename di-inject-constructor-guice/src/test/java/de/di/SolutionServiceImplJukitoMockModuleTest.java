@@ -27,6 +27,8 @@ import org.jukito.UseModules;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test for Guice with Jukito.
@@ -39,6 +41,8 @@ import org.junit.runner.RunWith;
 @UseModules({ GuiceMockModule.class })
 public class SolutionServiceImplJukitoMockModuleTest {
 
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImplJukitoMockModuleTest.class);
+
 	@Inject
 	private SolutionService solutionService;
 
@@ -50,6 +54,6 @@ public class SolutionServiceImplJukitoMockModuleTest {
 	public void testGetSolutionUsersWithMock() {
 		// Using UDM Mock
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		System.out.println(solutionUsers);
+		logger.info(solutionUsers.toString());
 	}
 }

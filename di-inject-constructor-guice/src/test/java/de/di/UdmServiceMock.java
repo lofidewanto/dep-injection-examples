@@ -18,6 +18,9 @@
  */
 package de.di;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Mock for UdmService.
  * 
@@ -27,10 +30,12 @@ package de.di;
  */
 public class UdmServiceMock implements UdmService {
 
+	private static final Logger logger = LoggerFactory.getLogger(UdmServiceMock.class);
+
 	@Override
 	public String findUdmUserById(Long id) {
 		// No database connection
-		System.out.println("\nNo database...");
+		logger.info("No database...");
 		return "UDM Mock";
 	}
 

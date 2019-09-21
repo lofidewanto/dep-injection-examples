@@ -22,6 +22,8 @@ import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -35,6 +37,8 @@ import com.google.inject.Injector;
  */
 public class SolutionServiceImplTest {
 
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImplTest.class);
+
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -43,21 +47,19 @@ public class SolutionServiceImplTest {
 	public void testGetSolutionUsers() {
 		// Constructor injection with Guice
 		Injector injector = Guice.createInjector(new GuiceModule());
-		SolutionService solutionService = injector
-				.getInstance(SolutionService.class);
+		SolutionService solutionService = injector.getInstance(SolutionService.class);
 
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		System.out.println(solutionUsers);
+		logger.info(solutionUsers.toString());
 	}
 
 	@Test
 	public void testGetSolutionUsersWithMock() {
 		// Using UDM Mock
 		Injector injector = Guice.createInjector(new GuiceMockModule());
-		SolutionService solutionService = injector
-				.getInstance(SolutionService.class);
+		SolutionService solutionService = injector.getInstance(SolutionService.class);
 
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		System.out.println(solutionUsers);
+		logger.info(solutionUsers.toString());
 	}
 }
