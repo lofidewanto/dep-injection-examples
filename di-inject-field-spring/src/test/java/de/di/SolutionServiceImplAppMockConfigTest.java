@@ -25,6 +25,8 @@ import javax.inject.Inject;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -41,6 +43,8 @@ import de.config.AppMockConfig;
 @ContextConfiguration(classes = { AppMockConfig.class, })
 public class SolutionServiceImplAppMockConfigTest {
 
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImplAppMockConfigTest.class);
+
 	@Inject
 	private SolutionService solutionService;
 
@@ -52,6 +56,6 @@ public class SolutionServiceImplAppMockConfigTest {
 	public void testGetSolutionUsersWithMock() {
 		// Field injection with Spring
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		System.out.println(solutionUsers);
+		logger.info(solutionUsers.toString());
 	}
 }

@@ -24,6 +24,9 @@ import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Service implementation.
  * 
@@ -34,13 +37,15 @@ import javax.inject.Named;
 @Named
 public class SolutionServiceImpl implements SolutionService {
 
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
+
 	@Inject
 	private UdmService udmService;
 
 	@Override
 	public Set<String> getSolutionUsers() {
-		// Get UDM primitively with "new"
-		System.out.println("\nUsing UDM");
+		// Get UDM from Spring inject
+		logger.info("Using UDM");
 		String user = udmService.findUdmUserById(1L);
 
 		Set<String> result = new HashSet<String>();

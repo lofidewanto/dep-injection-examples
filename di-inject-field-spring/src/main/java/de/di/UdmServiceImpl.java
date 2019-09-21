@@ -20,6 +20,8 @@ package de.di;
 
 import javax.inject.Named;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -32,6 +34,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Named
 public class UdmServiceImpl implements UdmService {
 
+	private static final Logger logger = LoggerFactory.getLogger(UdmServiceImpl.class);
+
 	@Autowired
 	private Storage<String> storageString;
 
@@ -41,8 +45,8 @@ public class UdmServiceImpl implements UdmService {
 	@Override
 	public String findUdmUserById(Long id) {
 		// Getting the storage
-		System.out.println("Storage String name: " + storageString.getName());
-		System.out.println("Storage Integer name: " + storageInteger.getName());
+		logger.info("Storage String name: " + storageString.getName());
+		logger.info("Storage Integer name: " + storageInteger.getName());
 
 		// Connect to database
 		databaseConnect();
@@ -55,7 +59,7 @@ public class UdmServiceImpl implements UdmService {
 	}
 
 	private void databaseConnect() {
-		System.out.println("\nConnecting to database...");
+		logger.info("Connecting to database...");
 	}
 
 }
