@@ -28,6 +28,7 @@
 	<!-- Modules                                                         -->
 	<!-- =============================================================== -->
 	<modules>
+		<module>di-inject-template</module>
 		<module>di-primitive-new</module>
 		<module>di-primitive-factory</module>
 		<module>di-inject-setter</module>

@@ -18,8 +18,6 @@
  */
 package de.di;
 
-import java.util.Set;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -42,9 +40,7 @@ public class SolutionServiceImplTest {
 
 	@Test
 	public void testGetSolutionUsers() {
-		SolutionService solutionService = new SolutionServiceImpl();
-		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		logger.info(solutionUsers.toString());
+		logger.info("Hello World");
 	}
 
 }
