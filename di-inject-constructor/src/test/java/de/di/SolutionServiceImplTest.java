@@ -20,8 +20,10 @@ package de.di;
 
 import java.util.Set;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Test.
@@ -32,7 +34,9 @@ import org.junit.Test;
  */
 public class SolutionServiceImplTest {
 
-	@Before
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImplTest.class);
+
+	@BeforeEach
 	public void setUp() throws Exception {
 	}
 
@@ -43,7 +47,7 @@ public class SolutionServiceImplTest {
 		SolutionService solutionService = new SolutionServiceImpl(udmService);
 
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		System.out.println(solutionUsers);
+		logger.info(solutionUsers.toString());
 	}
 
 	@Test
@@ -54,6 +58,6 @@ public class SolutionServiceImplTest {
 		SolutionService solutionService = new SolutionServiceImpl(udmServiceMock);
 
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
-		System.out.println(solutionUsers);
+		logger.info(solutionUsers.toString());
 	}
 }

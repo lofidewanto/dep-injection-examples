@@ -49,7 +49,7 @@ public class SolutionServiceImpl implements SolutionService {
 
 	@Override
 	public Set<String> getSolutionUsers() {
-		// Get UDM primitively with "new"
+		// We get UdmService through setter injection.
 		logger.info("Using UDM");
 		String user = udmService.findUdmUserById(1L);
 

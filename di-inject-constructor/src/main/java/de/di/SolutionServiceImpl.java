@@ -21,6 +21,9 @@ package de.di;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Service implementation.
  * 
@@ -29,6 +32,8 @@ import java.util.Set;
  * @version 1.0.0
  */
 public class SolutionServiceImpl implements SolutionService {
+
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
 
 	private final UdmService udmService;
 
@@ -44,8 +49,8 @@ public class SolutionServiceImpl implements SolutionService {
 
 	@Override
 	public Set<String> getSolutionUsers() {
-		// Get UDM primitively with "new"
-		System.out.println("\nUsing UDM");
+		// Get UDM primitively with "constructor"
+		logger.info("Using UDM");
 		String user = udmService.findUdmUserById(1L);
 
 		Set<String> result = new HashSet<String>();

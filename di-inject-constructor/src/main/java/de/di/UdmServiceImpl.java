@@ -18,6 +18,9 @@
  */
 package de.di;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Service implementation.
  * 
@@ -26,6 +29,8 @@ package de.di;
  * @version 1.0.0
  */
 public class UdmServiceImpl implements UdmService {
+
+	private static final Logger logger = LoggerFactory.getLogger(UdmServiceImpl.class);
 
 	@Override
 	public String findUdmUserById(Long id) {
@@ -40,7 +45,7 @@ public class UdmServiceImpl implements UdmService {
 	}
 
 	private void databaseConnect() {
-		System.out.println("\nConnecting to database...");
+		logger.info("Connecting to database...");
 	}
 
 }
