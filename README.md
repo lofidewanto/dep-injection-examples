@@ -8,7 +8,7 @@ Examples and Introduction for Dependency Injection and Inversion of Control:
   - Constructor
   - Setter
 - Guice
-- CDI / JBoss Weld
+- CDI / JBoss Weld (not yet available, open for a PR / MR 😉
 - Spring Framework
 - GWT Gin
 
