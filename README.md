@@ -12,4 +12,4 @@ Examples and Introduction for Dependency Injection and Inversion of Control:
 - [Spring Framework - Field injection](https://github.com/lofidewanto/dep-injection-examples/tree/master/di-inject-field-spring) but Spring also supports Constructor and Setter injection
 - [GWT Gin](https://github.com/lofidewanto/dep-injection-examples/tree/master/di-inject-constructor-gwt-gin)
 
-Our current build status: [![Build Status](https://travis-ci.org/lofidewanto/dep-injection-examples.svg?branch=master)](https://travis-ci.org/lofidewanto/dep-injection-examples)
+Our current build status: ![Build Status GitHub Actions](https://github.com/lofidewanto/dep-injection-examples/actions/workflows/maven.yml/badge.svg)
