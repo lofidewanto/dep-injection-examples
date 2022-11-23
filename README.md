@@ -12,5 +12,6 @@ Examples and Introduction for Dependency Injection and Inversion of Control:
   - CDI / JBoss Weld (not yet available, open for a PR / MR 😉)
   - [Spring Framework - Field injection](https://github.com/lofidewanto/dep-injection-examples/tree/master/di-inject-field-spring) - Spring also supports Constructor and Setter injection.
   - [GWT Gin](https://github.com/lofidewanto/dep-injection-examples/tree/master/di-inject-constructor-gwt-gin)
+  - Dagger2 (not yet available, open for a PR / MR 😉)
 
 Our current build status: ![Build Status GitHub Actions](https://github.com/lofidewanto/dep-injection-examples/actions/workflows/maven.yml/badge.svg)
