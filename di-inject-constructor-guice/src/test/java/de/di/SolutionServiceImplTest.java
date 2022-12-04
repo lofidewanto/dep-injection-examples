@@ -62,4 +62,15 @@ public class SolutionServiceImplTest {
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
 		logger.info(solutionUsers.toString());
 	}
+
+	@Test
+	public void testGetSolutionUsersWithMockAndPureJava() {
+		// Using UDM Mock
+		UdmService udmServiceMock = new UdmServiceMock();
+		// Constructor injection
+		SolutionService solutionService = new SolutionServiceImpl(udmServiceMock);
+
+		Set<String> solutionUsers = solutionService.getSolutionUsers();
+		logger.info(solutionUsers.toString());
+	}
 }
