@@ -29,6 +29,7 @@
 	<!-- =============================================================== -->
 	<modules>
 		<module>di-inject-template</module>
+		<module>di-inject-template-constructor-field-springboot</module>
 		<module>di-primitive-new</module>
 		<module>di-primitive-factory</module>
 		<module>di-inject-setter</module>
