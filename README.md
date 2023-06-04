@@ -15,3 +15,5 @@ Examples and Introduction for Dependency Injection and Inversion of Control:
   - Dagger2 (not yet available, open for a PR / MR 😉)
 
 Our current build status: ![Build Status GitHub Actions](https://github.com/lofidewanto/dep-injection-examples/actions/workflows/maven.yml/badge.svg)
+
+Works with Java 11 only. Not yet with Java 17 because of Maven Plugin of KissMDA.
