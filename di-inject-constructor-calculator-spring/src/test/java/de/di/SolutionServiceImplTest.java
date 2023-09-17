@@ -44,7 +44,8 @@ public class SolutionServiceImplTest {
 	public void testGetSolutionUsers() {
 		// Constructor injection
 		UdmService udmService = new UdmServiceImpl();
-		SolutionService solutionService = new SolutionServiceImpl(udmService);
+		Calculator calculator = new Calculator();
+		SolutionService solutionService = new SolutionServiceImpl(udmService, calculator);
 
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
 		logger.info(solutionUsers.toString());
@@ -54,8 +55,9 @@ public class SolutionServiceImplTest {
 	public void testGetSolutionUsersWithMock() {
 		// Using UDM Mock
 		UdmService udmServiceMock = new UdmServiceMock();
+		Calculator calculator = new Calculator();
 		// Constructor injection
-		SolutionService solutionService = new SolutionServiceImpl(udmServiceMock);
+		SolutionService solutionService = new SolutionServiceImpl(udmServiceMock, calculator);
 
 		Set<String> solutionUsers = solutionService.getSolutionUsers();
 		logger.info(solutionUsers.toString());

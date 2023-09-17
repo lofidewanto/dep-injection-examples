@@ -39,14 +39,17 @@ public class SolutionServiceImpl implements SolutionService {
 
 	private final UdmService udmService;
 
+	private final Calculator calculator;
+
 	/**
 	 * Constructor injection.
 	 *
 	 * @param udmService
 	 */
-	public SolutionServiceImpl(UdmService udmService) {
+	public SolutionServiceImpl(UdmService udmService, Calculator calculator) {
 		super();
 		this.udmService = udmService;
+		this.calculator = calculator;
 	}
 
 	@Override
@@ -54,8 +57,11 @@ public class SolutionServiceImpl implements SolutionService {
 		logger.info("Using UDM");
 		String user = udmService.findUdmUserById(1L);
 
+		int add = calculator.add(10, 20);
+
 		Set<String> result = new HashSet<String>();
-		result.add("User Name " + user);
+		result.add("User Name " + user + "- Calculator Result: " + add);
+
 		return result;
 	}
 

@@ -15,9 +15,10 @@ class SolutionServiceImplIT {
     SolutionService solutionService;
 
     @Test
-    void check_amount_of_solutionUsers() {
+    void check_amount_and_content_of_solutionUsers() {
         Set<String> solutionUsers = solutionService.getSolutionUsers();
 
         assertEquals(1, solutionUsers.size());
+        assertEquals("[User Name UDM- Calculator Result: 30]", solutionUsers.toString());
     }
 }
