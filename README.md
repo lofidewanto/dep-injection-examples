@@ -17,3 +17,5 @@ Examples and Introduction for Dependency Injection and Inversion of Control:
 Our current build status: ![Build Status GitHub Actions](https://github.com/lofidewanto/dep-injection-examples/actions/workflows/maven.yml/badge.svg)
 
 Works with Java 11 only. Not yet with Java 17 because of Maven Plugin of KissMDA.
+  - Change to Java 11 with SDKMAN!: sdk use java xxx
+  - Build with mvn clean verify (mvnd may have some problems with parallel generation of KissMDA)
